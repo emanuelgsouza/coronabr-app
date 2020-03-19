@@ -53,11 +53,14 @@ export default {
   },
 
   computed: {
+    accumulated () {
+      return this.stats.accumulated || {}
+    },
     todayCases () {
-      return 428
+      return this.accumulated.cases || 0
     },
     todayDeaths () {
-      return 4
+      return this.accumulated.deaths || 0
     },
     lastUpdatedFormated () {
       const date = new Date(this.lastUpdated)

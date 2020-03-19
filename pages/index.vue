@@ -6,25 +6,38 @@
     />
 
     <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
+
+    <client-only>
+      <DailyCases :daily-data="dailyData" />
+    </client-only>
   </div>
 </template>
 
 <script>
 import Hero from '~/components/Hero'
 import TodayStats from '~/components/TodayStats'
+import DailyCases from '~/components/DailyCases'
+import brData from '~/data/br.json'
 
 export default {
   name: 'IndexPage',
 
-  components: { Hero, TodayStats },
+  components: { Hero, TodayStats, DailyCases },
 
   data: () => ({
-    todayStats: {},
-    lastUpdated: new Date().getTime()
-  })
+    brData
+  }),
+
+  computed: {
+    todayStats () {
+      return this.brData.data.slice(-1)[0] || {}
+    },
+    dailyData () {
+      return this.brData.data.slice(-15)
+    },
+    lastUpdated () {
+      return this.brData.lastUpdated
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>
