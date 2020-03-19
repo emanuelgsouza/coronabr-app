@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <h2 class="title is-4 has-text-centered">
-      Dados oficiais mais atuais - atualizado em <span class="has-text-danger">{{ lastUpdatedFormated }}</span>
+      Dados oficiais - Atualizado em <span class="has-text-danger">{{ lastUpdatedFormated }}</span>
     </h2>
 
     <div class="columns">

@@ -2,7 +2,7 @@
   <header class="hero is-medium is-primary is-bold has-text-centered">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
+        <h1 class="title is-1">
           {{ title }}
         </h1>
         <h2 v-if="hasSubtitle" class="subtitle">
