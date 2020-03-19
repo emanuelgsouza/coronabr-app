@@ -17,26 +17,41 @@
 import Hero from '~/components/Hero'
 import TodayStats from '~/components/TodayStats'
 import DailyCases from '~/components/DailyCases'
-import brData from '~/data/br.json'
 
 export default {
   name: 'IndexPage',
 
   components: { Hero, TodayStats, DailyCases },
 
+  asyncData () {
+    return fetch('https://raw.githubusercontent.com/emanuelgsouza/coronabr-api/master/data/brazil.json')
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+
+        return Promise.resolve({})
+      })
+      .then((data) => {
+        return {
+          brazilData: data
+        }
+      })
+  },
+
   data: () => ({
-    brData
+    brazilData: {}
   }),
 
   computed: {
     todayStats () {
-      return this.brData.data.slice(-1)[0] || {}
+      return this.brazilData.data.slice(-1)[0] || {}
     },
     dailyData () {
-      return this.brData.data.slice(-15)
+      return this.brazilData.data.slice(-15)
     },
     lastUpdated () {
-      return this.brData.lastUpdated
+      return this.brazilData.lastUpdated
     }
   }
 }
