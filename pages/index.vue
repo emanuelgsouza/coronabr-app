@@ -12,7 +12,11 @@
         </p>
 
         <p>
-          Os dados deste projeto vem diretamente do site oficial do <a href="https://saude.gov.br/" title="Visite o site oficial do Ministério da Saúde">Ministério da Saúde</a> destinado a dar uma visualização e o estado atual da epidemia no Brasil. Você pode conferir o site oficial, que mostra algumas outras informações, tais como uma tabela mostrando os dados por país, no endereço <a href="http://plataforma.saude.gov.br/novocoronavirus/" title="Visite o site oficial para acompanhamento do COVID-19 feito pelo Ministério da Saúde">http://plataforma.saude.gov.br/novocoronavirus/</a>
+          <strike>Os dados deste projeto vem diretamente do site oficial do</strike> <a href="https://saude.gov.br/" title="Visite o site oficial do Ministério da Saúde">Ministério da Saúde (MS)</a> destinado a dar uma visualização e o estado atual da epidemia no Brasil. Você pode conferir o site oficial, que mostra algumas outras informações, tais como uma tabela mostrando os dados por país, no endereço <a href="http://plataforma.saude.gov.br/novocoronavirus/" title="Visite o site oficial para acompanhamento do COVID-19 feito pelo Ministério da Saúde">http://plataforma.saude.gov.br/novocoronavirus/</a>
+        </p>
+
+        <p>
+          A partir do dia 18 de Março o site oficial do MS apresentou instabilidades e desde então os dados não foram mais atualizados. Sendo assim, <span class="has-text-weight">a fonte de dados para este projeto mudou</span>. Encontramos um outro projeto, usado pela Equipe do Estadão (vide link abaixo) para analisarmos e tirarmos as informações de que precisamos para acompanhar a evolução no COVID-19 no Brasil. Reiterando, portanto, a fonte de dados atual é a do site da <a href="https://ourworldindata.org/coronavirus-source-data" title="Confira o site oficial da Our World in Data">Our World in Data</a>.
         </p>
 
         <p>

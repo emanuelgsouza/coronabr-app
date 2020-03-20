@@ -68,7 +68,7 @@ export default {
       return [
         {
           name: 'Casos confirmados',
-          data: this.dailyData.map(item => item.accumulated.cases)
+          data: this.dailyData.map(item => item.cases)
         }
       ]
     },
