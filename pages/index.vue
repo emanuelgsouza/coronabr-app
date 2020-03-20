@@ -29,7 +29,7 @@
     <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
 
     <client-only>
-      <DailyCases :daily-data="dailyData" />
+      <DailyCases :period.sync="period" :daily-data="dailyData" />
     </client-only>
   </div>
 </template>
@@ -61,7 +61,8 @@ export default {
   },
 
   data: () => ({
-    brazilData: {}
+    brazilData: {},
+    period: 15
   }),
 
   computed: {
@@ -69,7 +70,7 @@ export default {
       return this.brazilData.data.slice(-1)[0] || {}
     },
     dailyData () {
-      return this.brazilData.data.slice(-15)
+      return this.brazilData.data.slice(-this.period)
     },
     lastUpdated () {
       return this.brazilData.lastUpdated
