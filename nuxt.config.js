@@ -1,3 +1,7 @@
+const config = {
+  name: 'Corona BR - Acompanhe os casos do COVID-19 no Brasil',
+  color: '#011627'
+}
 
 export default {
   mode: 'universal',
@@ -5,11 +9,24 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Corona BR App',
+    title: config.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'theme-color',
+        content: config.color
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -42,8 +59,23 @@ export default {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
+  buefy: {
+    css: false
+  },
+  pwa: {
+    workbox: {
+      skipWaiting: false
+    },
+    manifest: {
+      background_color: config.color,
+      short_name: '@coronabr',
+      theme_color: config.color,
+      name: config.name
+    }
+  },
   /*
   ** Build configuration
   */
@@ -53,5 +85,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  // load global styles and variables
+  styleResources: {
+    scss: ['./assets/sass/variables.scss']
   }
 }
