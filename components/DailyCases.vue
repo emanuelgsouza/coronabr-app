@@ -68,7 +68,13 @@ export default {
       return [
         {
           name: 'Casos confirmados',
+          type: 'column',
           data: this.dailyData.map(item => item.cases)
+        },
+        {
+          name: 'Novos casos',
+          type: 'line',
+          data: this.dailyData.map(item => item.new_cases)
         }
       ]
     },
@@ -76,19 +82,22 @@ export default {
       return {
         chart: {
           id: 'vuechart',
-          type: 'bar'
+          type: 'line'
         },
         xaxis: {
           categories: this.dailyData.map(item => item.date)
         },
-        colors: ['#E71D36'],
+        colors: ['#E71D36', '#FF9F1C'],
         dataLabels: {
           enabled: true,
           offsetY: -20,
           style: {
-            fontSize: '12px',
-            colors: ['#304758']
-          }
+            fontSize: '12px'
+          },
+          enabledOnSeries: [0]
+        },
+        stroke: {
+          width: [0, 4]
         },
         plotOptions: {
           bar: {
