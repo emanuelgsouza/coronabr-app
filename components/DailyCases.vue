@@ -46,8 +46,8 @@ export default {
       required: true
     },
     period: {
-      type: Number,
-      default: 15,
+      type: String,
+      default: '15',
       required: true
     }
   },
@@ -55,11 +55,11 @@ export default {
   data: () => ({
     data: [
       {
-        value: 15,
+        value: '15',
         label: 'Últimos 15 dias'
       },
       {
-        value: 30,
+        value: '30',
         label: 'Últimos 30 dias'
       }
     ]

@@ -67,7 +67,7 @@ export default {
 
   data: () => ({
     brazilData: {},
-    period: 15
+    period: '15'
   }),
 
   computed: {
@@ -79,6 +79,44 @@ export default {
     },
     lastUpdated () {
       return this.brazilData.lastUpdated
+    }
+  },
+
+  watch: {
+    period () {
+      this.syncRouteWithData(['period'])
+    }
+  },
+
+  mounted () {
+    this.loadDataFromRoute(['period'])
+  },
+
+  methods: {
+    updateQueryString (query) {
+      this.$router.push({
+        ...this.$route,
+        query
+      })
+    },
+    syncRouteWithData (keys = []) {
+      const data = keys.reduce((acc, key) => {
+        acc[key] = this[key]
+
+        return acc
+      }, {})
+
+      this.updateQueryString(data)
+    },
+    loadDataFromRoute (keys = []) {
+      const { query } = this.$route
+
+      keys.forEach((key) => {
+        const val = query[key]
+        if (val) {
+          this[key] = val
+        }
+      })
     }
   }
 }
