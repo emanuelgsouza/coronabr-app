@@ -2,7 +2,7 @@
   <div>
     <Hero
       title="CoronaBR"
-      subtitle="Acompanhe os casos de COVID-19 no Brasil"
+      subtitle="Acompanhe a evolução nos casos de COVID-19 no Brasil"
     />
 
     <section class="section">
