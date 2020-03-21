@@ -1,16 +1,20 @@
-export const MONTHS_ABBREV = [
-  'Jan',
-  'Fev',
-  'Mar',
-  'Abr',
-  'Mai',
-  'Jun',
-  'Jul',
-  'Ago',
-  'Set',
-  'Nov',
-  'Dez'
+
+export const MONTHS = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro'
 ]
+
+export const MONTHS_ABBREV = MONTHS.map(month => month.slice(0, 3))
 
 export const formatToMonth = (date) => {
   if (date) {

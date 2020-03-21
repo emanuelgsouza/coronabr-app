@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <h2 class="title is-4 has-text-centered">
-      Dados oficiais - Atualizado em <span class="has-text-danger">{{ lastUpdatedFormated }}</span>
+      Últimos dados - Atualizado em <span class="has-text-danger">{{ lastUpdatedFormated }}</span>
     </h2>
 
     <div class="columns">
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { MONTHS } from '~/support/dates'
+
 export default {
   name: 'TodayStats',
 
@@ -61,8 +63,9 @@ export default {
     },
     lastUpdatedFormated () {
       const date = new Date(this.lastUpdated)
+      const month = MONTHS[date.getMonth()]
 
-      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
+      return `${date.getDate()} de ${month}, às ${date.getHours()}:${date.getMinutes()}`
     }
   }
 }
