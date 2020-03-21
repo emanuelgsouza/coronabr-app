@@ -16,7 +16,7 @@
         </p>
 
         <p>
-          A partir do dia 18 de Março o site oficial do MS apresentou instabilidades e desde então os dados não foram mais atualizados. Sendo assim, <span class="has-text-weight">a fonte de dados para este projeto mudou</span>. Encontramos um outro projeto, usado pela Equipe do Estadão (vide link abaixo) para analisarmos e tirarmos as informações de que precisamos para acompanhar a evolução no COVID-19 no Brasil. Reiterando, portanto, a fonte de dados atual é a do site da <a href="https://ourworldindata.org/coronavirus-source-data" title="Confira o site oficial da Our World in Data">Our World in Data</a>.
+          A partir do dia 18 de Março o site oficial do MS apresentou instabilidades e desde então os dados não foram mais atualizados. Sendo assim, <span class="has-text-weight-bold">a fonte de dados para este projeto mudou</span>. Encontramos um outro projeto, usado pela Equipe do Estadão (vide link abaixo) para analisarmos e tirarmos as informações de que precisamos para acompanhar a evolução no COVID-19 no Brasil. Reiterando, portanto, a fonte de dados atual é a do site da <a href="https://ourworldindata.org/coronavirus-source-data" title="Confira o site oficial da Our World in Data">Our World in Data</a> e <span class="has-text-weight-bold">a atualização dos dados é diária</span>.
         </p>
 
         <p>
