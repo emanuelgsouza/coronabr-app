@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { formatToMonth } from '~/support/dates'
+
 export default {
   name: 'DailyCases',
 
@@ -85,7 +87,14 @@ export default {
           type: 'line'
         },
         xaxis: {
-          categories: this.dailyData.map(item => item.date)
+          categories: this.dailyData.map(item => item.date),
+          labels: {
+            formatter: date => formatToMonth(date)
+          }
+        },
+        legend: {
+          show: true,
+          offsetX: 20
         },
         colors: ['#E71D36', '#FF9F1C'],
         dataLabels: {
