@@ -5,7 +5,7 @@
     </h2>
 
     <div class="columns">
-      <div class="column is-6">
+      <div class="column is-4">
         <div class="box has-text-centered">
           <p class="is-size-1 has-text-weight-semibold">
             {{ todayCases }}
@@ -17,7 +17,19 @@
         </div>
       </div>
 
-      <div class="column is-6">
+      <div class="column is-4">
+        <div class="box has-text-centered">
+          <p class="is-size-1 has-text-weight-semibold">
+            {{ newCases }}
+          </p>
+
+          <p class="is-size-5">
+            Novos casos
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-4">
         <div class="box has-text-centered">
           <p class="is-size-1 has-text-weight-semibold">
             {{ todayDeaths }}
@@ -60,6 +72,9 @@ export default {
     },
     todayDeaths () {
       return this.stats.deaths || 0
+    },
+    newCases () {
+      return this.stats.new_cases || 0
     },
     lastUpdatedFormated () {
       const date = new Date(this.lastUpdated)
