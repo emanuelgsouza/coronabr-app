@@ -62,7 +62,7 @@ export default {
 
   data: () => ({
     brazilData: {},
-    period: '15'
+    period: '7'
   }),
 
   computed: {

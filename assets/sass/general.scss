@@ -3,3 +3,9 @@
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+@media screen and (max-width: $tablet) {
+  .section {
+    padding: 1rem;
+  }
+}

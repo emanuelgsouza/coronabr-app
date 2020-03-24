@@ -47,13 +47,17 @@ export default {
     },
     period: {
       type: String,
-      default: '15',
+      default: '7',
       required: true
     }
   },
 
   data: () => ({
     data: [
+      {
+        value: '7',
+        label: 'Últimos 7 dias'
+      },
       {
         value: '15',
         label: 'Últimos 15 dias'
@@ -114,7 +118,19 @@ export default {
               position: 'top'
             }
           }
-        }
+        },
+        responsive: [
+          {
+            breakpoint: 768,
+            options: {
+              plotOptions: {
+                bar: {
+                  horizontal: false
+                }
+              }
+            }
+          }
+        ]
       }
     }
   },
@@ -139,7 +155,8 @@ export default {
   }
 
   @media screen and (max-width: $tablet) {
-    display: block;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 </style>
