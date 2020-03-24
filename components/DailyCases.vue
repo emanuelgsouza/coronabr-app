@@ -1,12 +1,16 @@
 <template>
   <section class="section">
     <div class="section-header">
-      <h2 class="title is-4 has-text-centered">
+      <h2 class="title is-4">
         Casos confirmados por dia no Brasil
       </h2>
 
-      <b-field horizontal>
+      <b-field
+        label="Selecione um período para visualizar"
+        label-for="period"
+      >
         <b-select
+          id="period"
           :value="period"
           placeholder="Selecione um período"
           @input="onSelectInput"
@@ -145,18 +149,6 @@ export default {
 
 <style lang="scss" scoped>
 .section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 2rem;
-
-  .title {
-    margin: 0;
-  }
-
-  @media screen and (max-width: $tablet) {
-    flex-direction: column;
-    justify-content: center;
-  }
 }
 </style>
