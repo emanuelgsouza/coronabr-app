@@ -29,7 +29,19 @@
     <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
 
     <client-only>
-      <DailyCases :period.sync="period" :daily-data="dailyData" />
+      <DailyChart
+        :period.sync="period"
+        :daily-data="dailyData"
+        :get-series-fn="getCasesSeriesChart"
+        title="Casos confirmados por dia no Brasil"
+      />
+
+      <DailyChart
+        :period.sync="period"
+        :daily-data="dailyData"
+        :get-series-fn="getDeathsSeriesChart"
+        title="Óbitos confirmados por dia no Brasil"
+      />
     </client-only>
   </div>
 </template>
@@ -37,12 +49,12 @@
 <script>
 import Hero from '~/components/Hero'
 import TodayStats from '~/components/TodayStats'
-import DailyCases from '~/components/DailyCases'
+import DailyChart from '~/components/DailyChart'
 
 export default {
   name: 'IndexPage',
 
-  components: { Hero, TodayStats, DailyCases },
+  components: { Hero, TodayStats, DailyChart },
 
   asyncData () {
     return fetch('https://raw.githubusercontent.com/emanuelgsouza/coronabr-api/master/data/brazil.json')
@@ -112,6 +124,34 @@ export default {
           this[key] = val
         }
       })
+    },
+    getCasesSeriesChart (dailyData) {
+      return [
+        {
+          name: 'Casos confirmados',
+          type: 'column',
+          data: dailyData.map(item => item.cases)
+        },
+        {
+          name: 'Novos casos',
+          type: 'line',
+          data: dailyData.map(item => item.new_cases)
+        }
+      ]
+    },
+    getDeathsSeriesChart (dailyData) {
+      return [
+        {
+          name: 'Óbitos confirmados',
+          type: 'column',
+          data: dailyData.map(item => item.deaths)
+        },
+        {
+          name: 'Novos óbitos',
+          type: 'line',
+          data: dailyData.map(item => item.new_deaths)
+        }
+      ]
     }
   }
 }
