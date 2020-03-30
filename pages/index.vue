@@ -26,23 +26,27 @@
       </div>
     </section>
 
-    <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
+    <div class="is-relative">
+      <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
 
-    <client-only>
-      <DailyChart
-        :period.sync="period"
-        :daily-data="dailyData"
-        :get-series-fn="getCasesSeriesChart"
-        title="Casos confirmados por dia no Brasil"
-      />
+      <client-only>
+        <DailyChart
+          :period.sync="period"
+          :daily-data="dailyData"
+          :get-series-fn="getCasesSeriesChart"
+          title="Casos confirmados por dia no Brasil"
+          :loading="isLoading"
+        />
 
-      <DailyChart
-        :period.sync="period"
-        :daily-data="dailyData"
-        :get-series-fn="getDeathsSeriesChart"
-        title="Óbitos confirmados por dia no Brasil"
-      />
-    </client-only>
+        <DailyChart
+          :period.sync="period"
+          :daily-data="dailyData"
+          :get-series-fn="getDeathsSeriesChart"
+          title="Óbitos confirmados por dia no Brasil"
+          :loading="isLoading"
+        />
+      </client-only>
+    </div>
   </div>
 </template>
 
@@ -56,25 +60,12 @@ export default {
 
   components: { Hero, TodayStats, DailyChart },
 
-  asyncData () {
-    return fetch('https://raw.githubusercontent.com/emanuelgsouza/coronabr-api/master/data/brazil.json')
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-
-        return Promise.resolve({})
-      })
-      .then((data) => {
-        return {
-          brazilData: data
-        }
-      })
-  },
-
   data: () => ({
-    brazilData: {},
-    period: '7'
+    brazilData: {
+      data: []
+    },
+    period: '7',
+    isLoading: true
   }),
 
   computed: {
@@ -85,7 +76,7 @@ export default {
       return this.brazilData.data.slice(-this.period)
     },
     lastUpdated () {
-      return this.brazilData.lastUpdated
+      return this.brazilData.lastUpdated || 0
     }
   },
 
@@ -97,6 +88,23 @@ export default {
 
   mounted () {
     this.loadDataFromRoute(['period'])
+
+    this.isLoading = true
+
+    return this.loadData()
+      .then((data) => {
+        this.isLoading = false
+        this.brazilData = data
+      })
+      .catch((err) => {
+        this.$buefy.toast.open({
+          duration: 5000,
+          message: err.message,
+          type: 'is-danger'
+        })
+
+        this.isLoading = false
+      })
   },
 
   methods: {
@@ -152,7 +160,29 @@ export default {
           data: dailyData.map(item => item.new_deaths)
         }
       ]
+    },
+    loadData () {
+      const URL = 'https://raw.githubusercontent.com/emanuelgsouza/coronabr-api/master/data/brazil.json'
+      return fetch(URL)
+        .then((response) => {
+          if (response.ok) {
+            return response.json()
+          }
+
+          return Promise.reject(new Error('Um erro ocorreu ao trazer os dados'))
+        })
+        .catch(Promise.reject)
     }
   }
 }
 </script>
+
+<style lang="scss">
+.loading-background {
+  z-index: 1;
+}
+
+.loading-background + .content {
+  z-index: 2;
+}
+</style>

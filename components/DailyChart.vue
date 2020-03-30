@@ -25,11 +25,23 @@
         </b-select>
       </b-field>
     </div>
-    <VueApexCharts
-      :options="options"
-      :series="series"
-      height="450px"
-    />
+    <div class="is-relative">
+      <VueApexCharts
+        :options="options"
+        :series="series"
+        height="450px"
+      />
+      <b-loading
+        :is-full-page="false"
+        :active.sync="loading"
+      >
+        <div class="content">
+          <p class="has-text-primary title is-2">
+            Carregando dados
+          </p>
+        </div>
+      </b-loading>
+    </div>
   </section>
 </template>
 
@@ -62,6 +74,10 @@ export default {
       type: String,
       default: '',
       required: true
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -125,6 +141,13 @@ export default {
             dataLabels: {
               position: 'top'
             }
+          }
+        },
+        noData: {
+          text: 'Carregando dados...',
+          style: {
+            color: '#011627',
+            fontSize: '22px'
           }
         }
       }

@@ -77,6 +77,9 @@ export default {
       return this.stats.new_cases || 0
     },
     lastUpdatedFormated () {
+      if (this.lastUpdated === 0) {
+        return 'Não disponível...'
+      }
       const date = new Date(this.lastUpdated)
       const month = MONTHS[date.getMonth()]
 
