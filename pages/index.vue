@@ -22,6 +22,8 @@
           <li><a href="https://coronavirus.jhu.edu/map.html" title="Visite o mapa desenvolvido pela Universidade Johns Hopkins">Mapa do Coronavirus</a> no mundo desenvolvido pela Universidade Johns Hopkins</li>
           <li><a href="https://arte.estadao.com.br/ciencia/novo-coronavirus/monitor-pandemia/" title="Confira o Monitor do COVID-19 desenvolvido pela equipe do Estadão"> Monitor do COVID-19 </a> desenvolvido pela equipe do Estadão</li>
           <li> <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" title="Confira o situation report">Situation Report</a> da Organização Mundial da Saúde</li>
+          <li><a href="https://brasil.io/dataset/covid19/caso" title="Confira o site do Brasil.IO">Repositório do Brasil.IO</a> com dados a nível municipal</li>
+          <li><a href="https://endoedgar.github.io/covid19-monitorbr/" title="Confira o mapa que mostra os dados a nível municipal">Mapa</a> que utiliza os dados do Brasil.IO informando dados por município</li>
         </ul>
       </div>
     </section>
