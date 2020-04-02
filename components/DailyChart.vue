@@ -127,7 +127,7 @@ export default {
         colors: ['#E71D36', '#FF9F1C'],
         dataLabels: {
           enabled: true,
-          offsetY: -20,
+          offsetY: -10,
           style: {
             fontSize: '12px'
           },
