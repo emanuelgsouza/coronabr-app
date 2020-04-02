@@ -49,6 +49,14 @@
           title="Óbitos confirmados por dia no Brasil"
           :loading="isLoading"
         />
+
+        <DailyChart
+          :period.sync="period"
+          :daily-data="dailyData"
+          :get-series-fn="getNewCasesChart"
+          title="Novos casos por dia"
+          :loading="isLoading"
+        />
       </client-only>
     </div>
   </div>
@@ -162,6 +170,15 @@ export default {
           name: 'Novos óbitos',
           type: 'line',
           data: dailyData.map(item => item.new_deaths)
+        }
+      ]
+    },
+    getNewCasesChart (dailyData) {
+      return [
+        {
+          name: 'Novos casos',
+          type: 'column',
+          data: dailyData.map(item => item.new_cases)
         }
       ]
     },
