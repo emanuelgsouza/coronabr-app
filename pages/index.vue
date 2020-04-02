@@ -47,16 +47,16 @@
         <DailyChart
           :period.sync="period"
           :daily-data="dailyData"
-          :get-series-fn="getDeathsSeriesChart"
-          title="Óbitos confirmados por dia no Brasil"
+          :get-series-fn="getNewCasesChart"
+          title="Novos casos por dia"
           :loading="isLoading"
         />
 
         <DailyChart
           :period.sync="period"
           :daily-data="dailyData"
-          :get-series-fn="getNewCasesChart"
-          title="Novos casos por dia"
+          :get-series-fn="getDeathsSeriesChart"
+          title="Óbitos confirmados por dia no Brasil"
           :loading="isLoading"
         />
       </client-only>
