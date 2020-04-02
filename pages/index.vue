@@ -27,7 +27,11 @@
     </section>
 
     <div class="is-relative">
-      <TodayStats :stats="todayStats" :last-updated="lastUpdated" />
+      <TodayStats
+        :stats="todayStats"
+        :last-updated="lastUpdated"
+        :loading="isLoading"
+      />
 
       <client-only>
         <DailyChart

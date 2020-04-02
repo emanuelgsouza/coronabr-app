@@ -6,51 +6,33 @@
 
     <div class="columns">
       <div class="column is-4">
-        <div class="box has-text-centered">
-          <p class="is-size-1 has-text-weight-semibold">
-            {{ todayCases }}
-          </p>
-
-          <p class="is-size-5">
-            Casos confirmados
-          </p>
-        </div>
+        <TodayBox label="Casos confirmados" :value="todayCases" :loading="loading" />
       </div>
 
       <div class="column is-4">
-        <div class="box has-text-centered">
-          <p class="is-size-1 has-text-weight-semibold">
-            {{ newCases }}
-          </p>
-
-          <p class="is-size-5">
-            Novos casos
-          </p>
-        </div>
+        <TodayBox label="Novos casos" :value="newCases" :loading="loading" />
       </div>
 
       <div class="column is-4">
-        <div class="box has-text-centered">
-          <p class="is-size-1 has-text-weight-semibold">
-            {{ todayDeaths }}
-          </p>
-
-          <p class="is-size-5">
-            Óbitos confirmados
-          </p>
-        </div>
+        <TodayBox
+          label="Óbitos confirmados"
+          :value="todayDeaths"
+          :loading="loading"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import TodayBox from './Box'
 import { MONTHS } from '~/support/dates'
 
 export default {
   name: 'TodayStats',
 
   components: {
+    TodayBox
   },
 
   props: {
@@ -63,6 +45,10 @@ export default {
       type: Number,
       default: () => 0,
       required: true
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
 
