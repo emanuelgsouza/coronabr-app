@@ -24,8 +24,8 @@ export default {
       required: true
     },
     value: {
-      type: String,
-      default: '',
+      type: Number,
+      default: 0,
       required: true
     },
     loading: {
