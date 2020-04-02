@@ -15,6 +15,7 @@
 
       <div class="column is-4">
         <TodayBox
+          class="has-text-danger"
           label="Óbitos confirmados"
           :value="todayDeaths"
           :loading="loading"
