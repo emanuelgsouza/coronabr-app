@@ -69,8 +69,15 @@ export default {
       }
       const date = new Date(this.lastUpdated)
       const month = MONTHS[date.getMonth()]
+      const minutes = this.getHourMinuteFormated(date.getMinutes())
+      const hours = this.getHourMinuteFormated(date.getHours())
 
-      return `${date.getDate()} de ${month}, às ${date.getHours()}:${date.getMinutes()}`
+      return `${date.getDate()} de ${month}, às ${hours}:${minutes}`
+    }
+  },
+  methods: {
+    getHourMinuteFormated (number) {
+      return number < 10 ? `0${number}` : number
     }
   }
 }
