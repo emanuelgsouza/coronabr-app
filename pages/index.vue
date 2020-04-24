@@ -95,6 +95,10 @@ export default {
       return this.brazilData.data.slice(-1)[0] || {}
     },
     dailyData () {
+      if (this.period === 'first_case') {
+        return this.brazilData.data.filter(item => item.cases > 0)
+      }
+
       return this.brazilData.data.slice(-this.period)
     },
     lastUpdated () {

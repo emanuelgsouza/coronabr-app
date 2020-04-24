@@ -84,6 +84,10 @@ export default {
   data: () => ({
     data: [
       {
+        value: 'first_case',
+        label: 'Desde o primeiro caso'
+      },
+      {
         value: '7',
         label: 'Últimos 7 dias'
       },
