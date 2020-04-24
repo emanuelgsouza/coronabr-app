@@ -2,7 +2,7 @@
   <div class="box has-text-centered is-relative">
     <template v-if="!loading">
       <p class="is-size-1 has-text-weight-semibold">
-        {{ value }}
+        {{ formatValue }}
       </p>
 
       <p class="is-size-5">
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { formatNumber } from '~/support/numbers'
+
 export default {
   name: 'TodayStatsBox',
   props: {
@@ -32,6 +34,11 @@ export default {
       type: Boolean,
       default: false,
       required: true
+    }
+  },
+  computed: {
+    formatValue () {
+      return formatNumber(this.value)
     }
   }
 }
