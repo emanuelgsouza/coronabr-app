@@ -9,3 +9,25 @@
     padding: 1rem;
   }
 }
+
+a.link {
+  color: $link;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+a.link.invert {
+  color: $success;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $primary;
+  }
+}

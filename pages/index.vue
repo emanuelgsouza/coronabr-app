@@ -11,19 +11,19 @@
           Este projeto tem como objetivo trazer um acompanhamento dos casos do COVID-19 no Brasil. Sendo assim, primeiramente você poderá ver uma linha do tempo mostrando a evolução dos casos oficiais no Brasil.
         </p>
 
-        <p>A fonte de dados para este projeto vem da <a href="https://ourworldindata.org/coronavirus-source-data" title="Confira o site oficial da Our World in Data">Our World in Data</a>, a qual usa os da dados da OMS (Organização Mundial da Saúde). Esta mesma fonte também é usada pelo equipe do Estadão em seu projeto de acompanhamento diário dos casos de CODIV-19 no Brasil (vide link abaixo). <span class="has-text-weight-bold">A atualização dos dados é diária</span></p>
+        <p>A fonte de dados para este projeto vem da <a class="link" href="https://ourworldindata.org/coronavirus-source-data" title="Confira o site oficial da Our World in Data">Our World in Data</a>, a qual usa os da dados da OMS (Organização Mundial da Saúde). Esta mesma fonte também é usada pelo equipe do Estadão em seu projeto de acompanhamento diário dos casos de CODIV-19 no Brasil (vide link abaixo). <span class="has-text-weight-bold">A atualização dos dados é diária</span></p>
 
         <p>
           Você pode conferir também outros projetos para acompanhamento da situação no Brasil e no mundo:
         </p>
         <ul>
-          <li> <a href="https://github.com/belisards/coronabr" title="Configura a base de dados no Github">Base de dados em CSV</a> atualizado diariamente pelo <a href="https://twitter.com/belisards" title="Visite o Twitter do Adriano Belisário">Adriano Belisário</a> </li>
-          <li><a href="https://covid.saude.gov.br/" title="Visite o site oficial para acompanhamento do COVID-19 feito pelo Ministério da Saúde">Site oficial</a> para acompanhamento dos casos pelo MS</li>
-          <li><a href="https://coronavirus.jhu.edu/map.html" title="Visite o mapa desenvolvido pela Universidade Johns Hopkins">Mapa do Coronavirus</a> no mundo desenvolvido pela Universidade Johns Hopkins</li>
-          <li><a href="https://arte.estadao.com.br/ciencia/novo-coronavirus/monitor-pandemia/" title="Confira o Monitor do COVID-19 desenvolvido pela equipe do Estadão"> Monitor do COVID-19 </a> desenvolvido pela equipe do Estadão</li>
-          <li> <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" title="Confira o situation report">Situation Report</a> da Organização Mundial da Saúde</li>
-          <li><a href="https://brasil.io/dataset/covid19/caso" title="Confira o site do Brasil.IO">Repositório do Brasil.IO</a> com dados a nível municipal</li>
-          <li><a href="https://endoedgar.github.io/covid19-monitorbr/" title="Confira o mapa que mostra os dados a nível municipal">Mapa</a> que utiliza os dados do Brasil.IO informando dados por município</li>
+          <li> <a class="link" href="https://github.com/belisards/coronabr" title="Configura a base de dados no Github">Base de dados em CSV</a> atualizado diariamente pelo <a class="link" href="https://twitter.com/belisards" title="Visite o Twitter do Adriano Belisário">Adriano Belisário</a> </li>
+          <li><a class="link" href="https://covid.saude.gov.br/" title="Visite o site oficial para acompanhamento do COVID-19 feito pelo Ministério da Saúde">Site oficial</a> para acompanhamento dos casos pelo MS</li>
+          <li><a class="link" href="https://coronavirus.jhu.edu/map.html" title="Visite o mapa desenvolvido pela Universidade Johns Hopkins">Mapa do Coronavirus</a> no mundo desenvolvido pela Universidade Johns Hopkins</li>
+          <li><a class="link" href="https://arte.estadao.com.br/ciencia/novo-coronavirus/monitor-pandemia/" title="Confira o Monitor do COVID-19 desenvolvido pela equipe do Estadão"> Monitor do COVID-19 </a> desenvolvido pela equipe do Estadão</li>
+          <li> <a class="link" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" title="Confira o situation report">Situation Report</a> da Organização Mundial da Saúde</li>
+          <li><a class="link" href="https://brasil.io/dataset/covid19/caso" title="Confira o site do Brasil.IO">Repositório do Brasil.IO</a> com dados a nível municipal</li>
+          <li><a class="link" href="https://endoedgar.github.io/covid19-monitorbr/" title="Confira o mapa que mostra os dados a nível municipal">Mapa</a> que utiliza os dados do Brasil.IO informando dados por município</li>
         </ul>
       </div>
     </section>
